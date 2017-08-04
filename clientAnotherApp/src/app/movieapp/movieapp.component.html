@@ -1,0 +1,54 @@
+<h2>Movies</h2>
+<hr/>
+<h2>Add Movies</h2>
+<div class="container">
+  <form>
+    <div class="form-group">
+      <label> Movie Name</label>
+      <input type="text" class="form-control" name="movie_name" [(ngModel)]="title" required>
+    </div>
+    <div class="form-group">
+      <label> Movie Url</label>
+      <input type="text" class="form-control" name="movie_url" [(ngModel)]="url" required>
+    </div>
+    <input type="button" (click)="addMovieeee()" class="btn btn-success" value="Add Movie!">
+  </form>
+</div>
+<hr/>
+<h2>List of Movies</h2>
+<div class="container">
+  <div class="row">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Movie Name</th>
+          <th>Url</th>
+          <th>Buttons</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mov of m">
+          <td> {{mov.title}}</td>
+          <td>{{mov.url}}</td>
+          <td><input type="button" (click)="EditMovie(mov)" class="btn btn-primary" value="Edit!">
+            <input type="button" (click)="deleteMovieees(mov._id)" value="Delete Movie!" class="btn btn-danger"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<hr/>
+<h2>Update Movies</h2>
+<div class="container">
+  <form >
+    <div class="form-group">
+      <label> Movie Name</label>
+      <input type="text" class="form-control" name="movie_name" [(ngModel)]="updatedTitle" required>
+    </div>
+    <div class="form-group">
+      <label> Movie Url</label>
+      <input type="text" class="form-control" name="movie_url" [(ngModel)]="updatedUrl" required>
+    </div>
+    <input type="button" (click)="update()" class="btn btn-success" value="Update!">
+  </form>
+</div>
